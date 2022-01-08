@@ -4,7 +4,14 @@
  */
 package main
 
-import "fmt"
+import (
+	"math"
+)
+
+var (
+	res   = 0
+	depth = 0
+)
 
 type TreeNode struct {
 	value int
@@ -12,16 +19,40 @@ type TreeNode struct {
 	right *TreeNode
 }
 
-func main() {
-
+func maxDepth(root *TreeNode) int {
+	traverse(root)
+	return res
 }
 
 //递归遍历树
 func traverse(root *TreeNode) {
 	if root == nil {
+		res = int(math.Max(float64(res), float64(depth)))
 		return
 	}
-	fmt.Println(root.value)
+	depth++
 	traverse(root.left)
 	traverse(root.right)
+	depth--
+}
+
+func MaxDepth(root *TreeNode) int {
+	if root == nil {
+		return 0
+	}
+	leftMax := MaxDepth(root.left)
+	rightMax := MaxDepth(root.right)
+	return int(math.Max(float64(leftMax), float64(rightMax))) + 1
+}
+
+func LevelTraverse(root *TreeNode) {
+	if root==nil{
+		return
+	}
+
+
+}
+
+func main() {
+
 }
