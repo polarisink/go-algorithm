@@ -24,7 +24,7 @@ func maxDepth(root *TreeNode) int {
 	return res
 }
 
-//递归遍历树
+//递归遍历树 
 func traverse(root *TreeNode) {
 	if root == nil {
 		res = int(math.Max(float64(res), float64(depth)))
@@ -45,13 +45,6 @@ func MaxDepth(root *TreeNode) int {
 	return int(math.Max(float64(leftMax), float64(rightMax))) + 1
 }
 
-func LevelTraverse(root *TreeNode) {
-	if root==nil{
-		return
-	}
-
-
-}
 
 func main() {
 
