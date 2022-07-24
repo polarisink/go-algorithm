@@ -14,7 +14,7 @@ type ListNode struct {
  * }
  */
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-
+	return nil
 }
 
 //leetcode submit region end(Prohibit modification and deletion)
